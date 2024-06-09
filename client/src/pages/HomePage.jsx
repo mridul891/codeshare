@@ -1,6 +1,7 @@
 import { useState } from "react";
 import logo from "../assets/code-sync.png";
 import { v4 as uuidV4 } from "uuid";
+import toast from 'react-hot-toast'
 const HomePage = () => {
   const [roomid, setRoomId] = useState("");
   const [username, setUsername] = useState("");
@@ -8,7 +9,7 @@ const HomePage = () => {
     e.preventDefault();
     const id = uuidV4();
     setRoomId(id);
-    console.log(id);
+    toast.success('Created a new Room')
   };
 
   return (
