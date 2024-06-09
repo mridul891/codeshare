@@ -1,17 +1,37 @@
 import { useState } from "react";
 import logo from "../assets/code-sync.png";
 import { v4 as uuidV4 } from "uuid";
-import toast from 'react-hot-toast'
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 const HomePage = () => {
   const [roomid, setRoomId] = useState("");
   const [username, setUsername] = useState("");
+  const navigate = useNavigate();
+
   const createNewRoom = (e) => {
     e.preventDefault();
     const id = uuidV4();
     setRoomId(id);
-    toast.success('Created a new Room')
+    toast.success("Created a new Room");
   };
 
+  // creation of room
+
+  const joinRoom = () => {
+    if (!roomid || !username) {
+      toast.error("Room ID & username is required");
+      return;
+    }
+
+    // Redirect To the Websocket Page
+    navigate(`editor/${roomid}`, { state: { username } });
+  };
+
+  const handleInputEnter = (e) => {
+    if (e.code === "Enter") {
+      joinRoom();
+    }
+  };
   return (
     <div className="homewrapper">
       <div className="formwrapper">
@@ -27,6 +47,7 @@ const HomePage = () => {
             placeholder="ROOMID"
             onChange={(e) => setRoomId(e.target.value)}
             value={roomid}
+            onKeyUp={handleInputEnter}
           />
           <input
             type="text"
@@ -34,8 +55,11 @@ const HomePage = () => {
             placeholder="USERNAME"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            onKeyUp={handleInputEnter}
           />
-          <button className="btn joinBtn">Join</button>
+          <button className="btn joinBtn" onClick={joinRoom}>
+            Join
+          </button>
 
           {/* Additional Information */}
           <span className="createInfo">
