@@ -18,12 +18,15 @@ const Editor = ({ socketRef, roomId }) => {
   useEffect(() => {
     if (socketRef.current) {
       socketRef.current.on("code-change", ({ value }) => {
-        console.log("recievinf", value);
         if (value !== null) {
           setcode(value);
         }
       });
     }
+
+    return () => {
+      socketRef.current.off("code-change");
+    };
   }, [socketRef.current]);
   return (
     <CodeMirror

@@ -28,9 +28,14 @@ const EditorPage = () => {
       await navigator.clipboard.writeText(roomId);
       toast.success("Room id  has been copied to your clipboard");
     } catch (error) {
-      toast.error('Could not copy the room id')
-      console.log(error)
+      toast.error("Could not copy the room id");
+      console.log(error);
     }
+  };
+
+  // leave room
+  const leaveRoom = async () => {
+    navigate("/");
   };
 
   useEffect(() => {
@@ -94,7 +99,9 @@ const EditorPage = () => {
         <button className="btn copyBtn" onClick={copyroomid}>
           Copy Room
         </button>
-        <button className="btn leaveBtn">Leave</button>
+        <button className="btn leaveBtn" onClick={leaveRoom}>
+          Leave
+        </button>
       </div>
       <div className="editorwrap">
         <Editor socketRef={socketRef} roomId={roomId} />
