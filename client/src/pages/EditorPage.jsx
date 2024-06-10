@@ -34,6 +34,7 @@ const EditorPage = () => {
         username: location.state?.username,
       });
 
+      // listing for all the users that joined
       socketRef.current.on(
         ACTIONS.JOINED,
         ({ clients, username, socketId }) => {
@@ -41,12 +42,27 @@ const EditorPage = () => {
             toast.success(`${username} joined the room`);
             console.log(`${username} joined`);
           }
-          setClients(clients)
+          setClients(clients);
         }
       );
+
+      // Listening for disconnected users
+      socketRef.current.on("disconnected", ({ socketId, username }) => {
+        toast.success(`${username} left the room `);
+        setClients((prev) => {
+          return prev.filter((client) => client.socketId !== socketId);
+        });
+      });
     };
 
     init();
+    // every listener need to closed as it use the memory at the maximum stage
+    return () => {
+      socketRef.current.off("join");
+      socketRef.current.off("joined");
+      socketRef.current.off("disconnect");
+      socketRef.current.disconnect();
+    };
   }, []);
 
   return (
