@@ -29,6 +29,7 @@ const EditorPage = () => {
       toast.success("Room id  has been copied to your clipboard");
     } catch (error) {
       toast.error('Could not copy the room id')
+      console.log(error)
     }
   };
 
