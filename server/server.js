@@ -3,11 +3,18 @@ const app = express()
 const http = require('http')
 const { Server } = require('socket.io')
 const cors = require('cors')
+const path = require('path')
 
 
 app.use(cors())
 const server = http.createServer(app);
-
+// --------------Deployment---------------
+const __dirname1 = path.resolve();
+app.use(express.static(path.join(__dirname1, '/client/dist')))
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname1, 'frontend', 'dist', 'index.html'))
+})
+// -----------------------------------------
 const io = new Server(server, {
     cors: {
         origin: 'https://codeshare-theta.vercel.app/', // specify the client URL

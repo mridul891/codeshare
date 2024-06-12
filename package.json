@@ -1,0 +1,14 @@
+{
+  "name": "codeeditor",
+  "version": "1.0.0",
+  "description": "\"# codeshare\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" :"node server/server.js",
+    "build":"npm install && npm install --prefix client && npm run  build  --prefix frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
