@@ -17,7 +17,7 @@ app.get('*', (req, res) => {
 // -----------------------------------------
 const io = new Server(server, {
     cors: {
-        origin: 'https://codeshare-theta.vercel.app/', // specify the client URL
+        origin: 'https://codeshare-theta.vercel.app', // specify the client URL
         methods: ["GET", "POST"],
         allowedHeaders: "*",
         credentials: true
