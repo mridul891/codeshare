@@ -6,11 +6,12 @@ Welcome to CodeSync, a real-time collaborative code editor designed for seamless
 
 - **Real-Time Collaboration:** Multiple users can edit the same document simultaneously.
 - **Preview:**
-- <video width="320" height="240" controls>
-  <source src="[https://github.com/your-username/your-repo/blob/main/video.mp](https://github.com/mridul891/codeshare/blob/628bafebf0ce89581714f64641ddf1e37b32d9dd/codeshare.mp4)" type="video/mp4">
+
+## Demo
+<video width="320" height="240" controls>
+  <source src="[https://github.com/mridul891/codeshare/blob/628bafebf0ce89581714f64641ddf1e37b32d9dd/codeshare.mp4](https://github.com/mridul891/codeshare/blob/main/codeshare.mp4)" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-
 
 # CodeSync - The Collaborative Code Editor
 
