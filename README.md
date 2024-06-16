@@ -8,10 +8,9 @@ Welcome to CodeSync, a real-time collaborative code editor designed for seamless
 - **Preview:**
 
 ## Demo
-<video width="320" height="240" controls>
-  <source src="[https://github.com/mridul891/codeshare/blob/628bafebf0ce89581714f64641ddf1e37b32d9dd/codeshare.mp4](https://github.com/mridul891/codeshare/blob/main/codeshare.mp4)" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+
+https://github.com/mridul891/codeshare/assets/58576921/9b5d2f4c-0f47-4756-a7be-208884ed5a89
+
 
 # CodeSync - The Collaborative Code Editor
 
