@@ -19,7 +19,7 @@ const io = new Server(server, {
     cors: {
         // origin: ['https://codeshare-theta.vercel.app', 'http://localhost:5173/'],
         // specify the client URL
-        origin: 'http://codeshare-theta.vercel.app',
+        origin: 'https://codeshare-theta.vercel.app',
         methods: ["GET", "POST"],
         allowedHeaders: "*",
         credentials: true
