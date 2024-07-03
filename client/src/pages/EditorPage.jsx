@@ -95,13 +95,14 @@ const EditorPage = () => {
             ))}
           </div>
         </div>
-
-        <button className="btn copyBtn" onClick={copyroomid}>
-          Copy Room
-        </button>
-        <button className="btn leaveBtn" onClick={leaveRoom}>
-          Leave
-        </button>
+        <div className="buttons">
+          <button className="btn copyBtn" onClick={copyroomid}>
+            Copy Room
+          </button>
+          <button className="btn leaveBtn" onClick={leaveRoom}>
+            Leave
+          </button>
+        </div>
       </div>
       <div className="editorwrap">
         <Editor socketRef={socketRef} roomId={roomId} />

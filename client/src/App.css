@@ -87,9 +87,25 @@ footer a:hover {
 }
 .mainWrap {
   display: flex;
+  flex-direction: column;
   height: 100vh;
 }
 
+@media (min-width: 768px) {
+  .copyBtn,
+  .leaveBtn {
+    max-width: 15rem;
+    margin-right: 100px;
+  }
+}
+@media (min-width: 1800px) {
+  .mainWrap {
+    flex-direction: row;
+  }
+  .editorwrap {
+    width: 100vw;
+  }
+}
 .aside {
   background-color: #1c1e29;
   margin: 16px;
